@@ -50,11 +50,11 @@ create table taxi_Rum.driver (
 comment on column taxi_Rum.driver.id is 'driver_id';
 comment on column taxi_Rum.driver.percent_of_payment is 'percent of payment for driver in format like 90.00';
 
-insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Vladimir', 24, '+79885819542', 88.23, date'2024-03-01');
-insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Michail',  32, '+79888979797', 92.10, date'2024-02-01');
-insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Aleksey',  27, '+79888172634', 86.00, date'2024-01-01');
-insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Artem',    30, '+79917272347', 85.00, date'2024-03-02');
-insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Shrek',    55, '+79829372673', 93.21, date'2024-03-03');
+--insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Vladimir', 24, '+79885819542', 88.23, date'2024-03-01');
+--insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Michail',  32, '+79888979797', 92.10, date'2024-02-01');
+--insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Aleksey',  27, '+79888172634', 86.00, date'2024-01-01');
+--insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Artem',    30, '+79917272347', 85.00, date'2024-03-02');
+--insert into  taxi_Rum.driver ( name, age, phone_number, percent_of_payment, registration_date) values ( 'Shrek',    55, '+79829372673', 93.21, date'2024-03-03');
 
 commit;
 --drop table taxi_Rum.driver;
@@ -72,11 +72,11 @@ create table taxi_Rum.currency (
 comment on column taxi_Rum.currency.id is 'currency_id';
 
 
-insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Rubles',         'RUB');
-insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Tenge',          'KZT');
-insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Somoni',         'TJS');
-insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Belarus Rubles', 'Br');
-insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Som',            'KGS');
+--insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Rubles',         'RUB');
+--insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Tenge',          'KZT');
+--insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Somoni',         'TJS');
+--insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Belarus Rubles', 'Br');
+--insert    into taxi_Rum.currency ( name, abbrevation) values ( 'Som',            'KGS');
 
 commit;
 -- end table taxi_Rum.currency
@@ -94,11 +94,11 @@ create table taxi_Rum.rate (
                     );
 comment on column taxi_Rum.rate.id is 'rate_id';
 
-insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 1, 1);
-insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 2, 12.2);
-insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 3, 18.31);
-insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 4, 26.37);
-insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 5, 0.88);
+--insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 1, 1);
+--insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 2, 12.2);
+--insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 3, 18.31);
+--insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 4, 26.37);
+--insert    into taxi_Rum.rate ( currency1_id, currency2_id, rate) values ( 1, 5, 0.88);
 commit;
 -- end table taxi_Rum.rate
 
@@ -135,11 +135,11 @@ create table taxi_Rum.country (
                     );
 comment on column taxi_Rum.country.id is 'country_id';
 
-insert    into taxi_Rum.country ( name) values ( 'Russian Federation');
-insert    into taxi_Rum.country ( name) values ( 'Kazakhstan');
-insert    into taxi_Rum.country ( name) values ( 'Tajikistan');
-insert    into taxi_Rum.country ( name) values ( 'Belarus');
-insert    into taxi_Rum.country ( name) values ( 'Kyrgyzstan');
+--insert    into taxi_Rum.country ( name) values ( 'Russian Federation');
+--insert    into taxi_Rum.country ( name) values ( 'Kazakhstan');
+--insert    into taxi_Rum.country ( name) values ( 'Tajikistan');
+--insert    into taxi_Rum.country ( name) values ( 'Belarus');
+--insert    into taxi_Rum.country ( name) values ( 'Kyrgyzstan');
 commit;
 -- drop table taxi_Rum.country;
 -- end table taxi_Rum.country
@@ -152,14 +152,14 @@ create table taxi_Rum.currency2country (
                         foreign key(currency_id) references taxi_Rum.currency,
                         foreign key(country_id) references taxi_Rum.country
                     );
-                    
+/*                    
 insert all
     into taxi_Rum.currency2country (currency_id, country_id) values (1, 1)
     into taxi_Rum.currency2country (currency_id, country_id) values (2, 2)
     into taxi_Rum.currency2country (currency_id, country_id) values (3, 3)
     into taxi_Rum.currency2country (currency_id, country_id) values (4, 4)
     into taxi_Rum.currency2country (currency_id, country_id) values (5, 5)
-select * from dual;
+select * from dual;*/
 commit;
 -- end table taxi_Rum.currency2country
 
@@ -174,11 +174,11 @@ create table taxi_Rum.city (
                     );
 comment on column taxi_Rum.city.id is 'city_id';
 
-insert    into taxi_Rum.city ( name, country_id) values ( 'Moscow',   1);
-insert    into taxi_Rum.city ( name, country_id) values ( 'Astana',   2);
-insert    into taxi_Rum.city ( name, country_id) values ( 'Dushanbe', 3);
-insert    into taxi_Rum.city ( name, country_id) values ( 'Minsk',    4);
-insert    into taxi_Rum.city ( name, country_id) values ( 'Bishkek',  5);
+--insert    into taxi_Rum.city ( name, country_id) values ( 'Moscow',   1);
+--insert    into taxi_Rum.city ( name, country_id) values ( 'Astana',   2);
+--insert    into taxi_Rum.city ( name, country_id) values ( 'Dushanbe', 3);
+--insert    into taxi_Rum.city ( name, country_id) values ( 'Minsk',    4);
+--insert    into taxi_Rum.city ( name, country_id) values ( 'Bishkek',  5);
 commit;
 -- end table taxi_Rum.city
 
@@ -192,11 +192,11 @@ create table taxi_Rum.street (
                         foreign key (city_id) references taxi_Rum.city
                     );
 comment on column taxi_Rum.street.id is 'street_id';
-insert    into taxi_Rum.street ( name, city_id) values ( 'Pobedy',     1);
-insert    into taxi_Rum.street ( name, city_id) values ( 'Tolaguy',    2);
-insert    into taxi_Rum.street ( name, city_id) values ( 'Borbad',     3);
-insert    into taxi_Rum.street ( name, city_id) values ( 'Jukovskogo', 4);
-insert    into taxi_Rum.street ( name, city_id) values ( 'Troitskaya', 5);
+--insert    into taxi_Rum.street ( name, city_id) values ( 'Pobedy',     1);
+--insert    into taxi_Rum.street ( name, city_id) values ( 'Tolaguy',    2);
+--insert    into taxi_Rum.street ( name, city_id) values ( 'Borbad',     3);
+--insert    into taxi_Rum.street ( name, city_id) values ( 'Jukovskogo', 4);
+--insert    into taxi_Rum.street ( name, city_id) values ( 'Troitskaya', 5);
 commit;
 -- end table taxi_Rum.street
 
@@ -212,11 +212,11 @@ create table taxi_Rum.address (
 comment on column taxi_Rum.address.id is 'address_id';
 
 
-insert    into taxi_Rum.address ( house_number, street_id) values ( 10, 1);
-insert    into taxi_Rum.address ( house_number, street_id) values ( 12, 2);
-insert    into taxi_Rum.address ( house_number, street_id) values ( 20, 3);
-insert    into taxi_Rum.address ( house_number, street_id) values ( 32, 4);
-insert    into taxi_Rum.address ( house_number, street_id) values ( 16, 5);
+--insert    into taxi_Rum.address ( house_number, street_id) values ( 10, 1);
+--insert    into taxi_Rum.address ( house_number, street_id) values ( 12, 2);
+--insert    into taxi_Rum.address ( house_number, street_id) values ( 20, 3);
+--insert    into taxi_Rum.address ( house_number, street_id) values ( 32, 4);
+--insert    into taxi_Rum.address ( house_number, street_id) values ( 16, 5);
 commit;
 -- end table taxi_Rum.address
 
@@ -231,11 +231,11 @@ create table taxi_Rum.parking (
                     );
 comment on column taxi_Rum.parking.id is 'parking_id';
 
-insert    into taxi_Rum.parking ( number1, address_id) values ( 10, 1);
-insert    into taxi_Rum.parking ( number1, address_id) values ( 8,  2);
-insert    into taxi_Rum.parking ( number1, address_id) values ( 3,  3);
-insert    into taxi_Rum.parking ( number1, address_id) values ( 12, 4);
-insert    into taxi_Rum.parking ( number1, address_id) values ( 16, 5);
+--insert    into taxi_Rum.parking ( number1, address_id) values ( 10, 1);
+--insert    into taxi_Rum.parking ( number1, address_id) values ( 8,  2);
+--insert    into taxi_Rum.parking ( number1, address_id) values ( 3,  3);
+--insert    into taxi_Rum.parking ( number1, address_id) values ( 12, 4);
+--insert    into taxi_Rum.parking ( number1, address_id) values ( 16, 5);
 commit;
 -- end table taxi_Rum.parking
 
@@ -257,11 +257,11 @@ create table taxi_Rum.car (
 comment on column taxi_Rum.car.id is 'car_id';
 comment on column taxi_Rum.car.is_reserved is 'boolean 1-true 0-false'; 
 
-insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'Mitsubishi', 'Lancer Evolution VIII', 6, 0, 'H235CB', 1, 23000);
-insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'Lada',       'Granta',                7, 0, 'A032MM', 1, 16000);
-insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'Renault',    'Logan',                 5, 0, 'B422TT', 1, 7000);
-insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'Ford',       'Focus',                 3, 0, 'A076MT', 1, 23000);
-insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'BMW',        'X5',                    2, 0, 'X777XX', 1, 5000);
+--insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'Mitsubishi', 'Lancer Evolution VIII', 6, 0, 'H235CB', 1, 23000);
+--insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'Lada',       'Granta',                7, 0, 'A032MM', 1, 16000);
+--insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'Renault',    'Logan',                 5, 0, 'B422TT', 1, 7000);
+--insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'Ford',       'Focus',                 3, 0, 'A076MT', 1, 23000);
+--insert    into taxi_Rum.car ( brand, model, color_id, is_reserved, state_number, parking_id, mileage) values ( 'BMW',        'X5',                    2, 0, 'X777XX', 1, 5000);
 commit;
 -- end table taxi_Rum.car
 
@@ -281,11 +281,11 @@ create table taxi_Rum.rent (
                     );
 comment on column taxi_Rum.rent.id is 'rent_id';
 
-insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1001, 1, date'2024-03-04', date'2024-03-04', 15, 150);
-insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1002, 2, date'2024-02-11', date'2024-02-11', 18, 92);
-insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1003, 3, date'2024-01-01', date'2024-01-01', 15, 10);
-insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1004, 4, date'2024-03-03', date'2024-03-03', 16, 25);
-insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1005, 5, date'2024-03-04', date'2024-03-04', 22, 70);
+--insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1001, 1, date'2024-03-04', date'2024-03-04', 15, 150);
+--insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1002, 2, date'2024-02-11', date'2024-02-11', 18, 92);
+--insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1003, 3, date'2024-01-01', date'2024-01-01', 15, 10);
+--insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1004, 4, date'2024-03-03', date'2024-03-03', 16, 25);
+--insert into taxi_Rum.rent (driver_id, car_id, date_start, date_stop, gas_mileage, distance) values (1005, 5, date'2024-03-04', date'2024-03-04', 22, 70);
 commit;
 
 -- end table taxi_Rum.rent
@@ -308,14 +308,14 @@ create table taxi_Rum.driver_rating (
                         foreign key(id) references taxi_Rum.driver
                     );
 comment on column taxi_Rum.driver_rating.id is 'driver_id';
-
+/*
 insert all
     into taxi_Rum.driver_rating (id, rating) values (1001, 4.8)
     into taxi_Rum.driver_rating (id, rating) values (1002, 4.94)
     into taxi_Rum.driver_rating (id, rating) values (1003, 4.72)
     into taxi_Rum.driver_rating (id, rating) values (1004, 3.8)
     into taxi_Rum.driver_rating (id, rating) values (1005, 5.0)
-select * from dual;
+select * from dual;*/
 commit;
 -- end table taxi_Rum.driver_rating
 
@@ -336,11 +336,11 @@ comment on column taxi_Rum.passenger.id is 'passenger id';
 comment on column taxi_Rum.passenger.is_anonimous is 'boolean 1-true 0-false'; 
 comment on column taxi_Rum.passenger.is_male is 'boolean 1-true 0-false null - undefined'; 
 
-insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Dmitriy', 21, 1, '+79885819542', 0);
-insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Maria',   23, 2, '+78986565882', 1);
-insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Katerina',21, 3, '+77984658566', 1);
-insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Artur',   32, 4, '+74894946598', 0);
-insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Eugeniy', 21, 5, '+76586589988', 0);
+--insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Dmitriy', 21, 1, '+79885819542', 0);
+--insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Maria',   23, 2, '+78986565882', 1);
+--insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Katerina',21, 3, '+77984658566', 1);
+--insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Artur',   32, 4, '+74894946598', 0);
+--insert    into taxi_Rum.passenger ( is_anonimous, name, age, home_address_id, phone_number, is_male) values ( 0, 'Eugeniy', 21, 5, '+76586589988', 0);
 commit;
 
 -- end taxi_Rum.passenger
@@ -363,14 +363,14 @@ create table taxi_Rum.passanger_rating (
                         foreign key (id) references taxi_Rum.passenger
                     );
 comment on column taxi_Rum.passanger_rating.id is 'passanger_id';
-
+/*
 insert all
     into taxi_Rum.passanger_rating (id, rating) values (1, 4.8)
     into taxi_Rum.passanger_rating (id, rating) values (2, 4.94)
     into taxi_Rum.passanger_rating (id, rating) values (3, 4.72)
     into taxi_Rum.passanger_rating (id, rating) values (4, 3.8)
     into taxi_Rum.passanger_rating (id, rating) values (5, 5.0)
-select * from dual;
+select * from dual;*/
 commit;
 -- end table taxi_Rum.passanger_rating
 
@@ -416,13 +416,13 @@ create table taxi_Rum.taxi_order (
                     );
 comment on column taxi_Rum.taxi_order.id is 'order_id';
 
-insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 1, 1001, null, 1, 1, 1, 62.2);
-insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 2, 1002, null, 2, 2, 2, 55.0);
-insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 3, 1003, null, 4, 3, 3, 48.6);
-insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 4, 1004, null, 3, 4, 4, 68.3);
-insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 5, 1005, null, 7, 5, 5, 43.3);
-insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 1, 1002, null, 1, 1, 1, 63.2);
-insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 1, 1002, null, 1, 1, 4, 63.2);
+--insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 1, 1001, null, 1, 1, 1, 62.2);
+--insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 2, 1002, null, 2, 2, 2, 55.0);
+--insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 3, 1003, null, 4, 3, 3, 48.6);
+--insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 4, 1004, null, 3, 4, 4, 68.3);
+--insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 5, 1005, null, 7, 5, 5, 43.3);
+--insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 1, 1002, null, 1, 1, 1, 63.2);
+--insert    into taxi_Rum.taxi_order ( passenger_id, driver_id, time_end, status_id, payment_id, end_trip_address, average_driver_speed) values ( 1, 1002, null, 1, 1, 4, 63.2);
 
 commit;
 -- end table taxi_Rum.order
@@ -444,12 +444,12 @@ create table taxi_Rum.way (
                         
                     );
 comment on column taxi_Rum.way.id is 'way_id';
-
+/*
 insert    into taxi_Rum.way ( from_address_id, to_address_id, distance, order_id, preview_way_id) values ( 1, 2, 71, 1, null);
 insert    into taxi_Rum.way ( from_address_id, to_address_id, distance, order_id, preview_way_id) values ( 2, 3, 80, 2, null);
 insert    into taxi_Rum.way ( from_address_id, to_address_id, distance, order_id, preview_way_id) values ( 3, 4, 72, 3, null);
 insert    into taxi_Rum.way ( from_address_id, to_address_id, distance, order_id, preview_way_id) values ( 4, 5, 98, 4, null);
-insert    into taxi_Rum.way ( from_address_id, to_address_id, distance, order_id, preview_way_id) values ( 5, 1, 56, 5, null);
+insert    into taxi_Rum.way ( from_address_id, to_address_id, distance, order_id, preview_way_id) values ( 5, 1, 56, 5, null);*/
 commit;
 
 -- end table taxi_Rum.way
@@ -468,12 +468,13 @@ create table taxi_Rum.rating_passenger2driver (
                         foreign key(order_id) references taxi_Rum.taxi_order                      
                     );
 comment on column taxi_Rum.rating_passenger2driver.id is 'rating_passenger2driver_id';
-
+/*
 insert    into taxi_Rum.rating_passenger2driver ( passenger_id, driver_id, order_id, rating) values ( 1, 1001, 1, 5);
 insert    into taxi_Rum.rating_passenger2driver ( passenger_id, driver_id, order_id, rating) values ( 2, 1002, 2, 4);
 insert    into taxi_Rum.rating_passenger2driver ( passenger_id, driver_id, order_id, rating) values ( 3, 1003, 3, 5);
 insert    into taxi_Rum.rating_passenger2driver ( passenger_id, driver_id, order_id, rating) values ( 4, 1004, 4, 4);
 insert    into taxi_Rum.rating_passenger2driver ( passenger_id, driver_id, order_id, rating) values ( 5, 1005, 5, 5);
+*/
 commit;
 -- end table taxi_Rum.rating_passenger2driver
 
@@ -491,12 +492,13 @@ create table taxi_Rum.rating_driver2passenger (
                         foreign key(order_id) references taxi_Rum.taxi_order                       
                     );
 comment on column taxi_Rum.rating_driver2passenger.id is 'rating_driver2passenge_id';
-
+/*
 insert    into taxi_Rum.rating_driver2passenger ( passenger_id, driver_id, order_id, rating) values ( 1, 1001, 1, 4);
 insert    into taxi_Rum.rating_driver2passenger ( passenger_id, driver_id, order_id, rating) values ( 2, 1002, 2, 5);
 insert    into taxi_Rum.rating_driver2passenger ( passenger_id, driver_id, order_id, rating) values ( 3, 1003, 3, 4);
 insert    into taxi_Rum.rating_driver2passenger ( passenger_id, driver_id, order_id, rating) values ( 4, 1004, 4, 5);
 insert    into taxi_Rum.rating_driver2passenger ( passenger_id, driver_id, order_id, rating) values ( 5, 1005, 5, 4);
+*/
 commit;
 -- end table taxi_Rum.rating_passenger2driver
 
@@ -516,14 +518,15 @@ create table taxi_Rum.refueling (
                         foreign key(address_id) references taxi_Rum.address
                     );
 comment on column taxi_Rum.refueling.id is 'refueling_id';
-
+/*
 insert    into taxi_Rum.refueling ( driver_id, car_id, payment_id, address_id, amount_of_gas) values ( 1001, 1, 1, 2, 18.2);
 insert    into taxi_Rum.refueling ( driver_id, car_id, payment_id, address_id, amount_of_gas) values ( 1002, 2, 2, 3, 22.6);
 insert    into taxi_Rum.refueling ( driver_id, car_id, payment_id, address_id, amount_of_gas) values ( 1003, 3, 3, 4, 34.1);
 insert    into taxi_Rum.refueling ( driver_id, car_id, payment_id, address_id, amount_of_gas) values ( 1004, 4, 4, 5, 12.5);
 insert    into taxi_Rum.refueling ( driver_id, car_id, payment_id, address_id, amount_of_gas) values ( 1005, 5, 5, 1, 23.1);
+*/
 commit;
 -- end table taxi_Rum.rating_passenger2driver
 
-commit;
+
 
