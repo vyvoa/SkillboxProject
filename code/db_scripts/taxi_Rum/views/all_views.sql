@@ -128,7 +128,6 @@ from(
             sum(payment.amount_to_paid/rate.rate)  over (partition by city.id) as  sum_amount_to_paid,
             city.name as city_name,
             city.id
-            
     from TAXI_RUM.refueling refueling
     inner join TAXI_RUM.payment payment
             on payment.id = refueling.payment_id
@@ -140,11 +139,10 @@ from(
             on street.city_id = city.id
     inner join TAXI_RUM.rate rate
             on rate.currency2_id = payment.currency_id
-    where trunc(rate.time_create, 'DD') = trunc(payment.time_create, 'DD')
+    --where trunc(rate.time_create, 'DD') = trunc(payment.time_create, 'DD')
     )
 order by city_name asc
 ;
-
 
 
 

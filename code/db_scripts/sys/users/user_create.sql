@@ -8,3 +8,4 @@ create user taxi_Rum
 grant create session to taxi_Rum;
 
 --drop user taxi_Rum cascade;
+commit;

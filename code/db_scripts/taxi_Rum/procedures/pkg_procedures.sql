@@ -134,21 +134,16 @@ as
     begin
         insert into taxi_Rum.payment (amount_to_paid, currency_id, type) values (amount_of_payment, currency_country_id, payment_type_id) returning id into refuel_payment_id;
         
-        for item in (select 
+        select  
             driver_id as dr_id
+            into driver_rent_id
         from taxi_Rum.rent
         where 
-            car_id = rent_car_id and
-            date_stop is null and
-            gas_mileage is null and
-            distance is null) loop
-            driver_rent_id := item.dr_id;
-            end loop;            
+            car_id = rent_car_id
+            and date_stop is null;           
         insert into taxi_Rum.refueling (driver_id, car_id, payment_id, address_id, amount_of_gas) values (driver_rent_id, rent_car_id, refuel_payment_id , address_refueling_id, rent_car_amount_of_gas);
     end car_refueling;
     
 --end  procedure car_refueling
 
 end Pkg_procedures;
-
-
